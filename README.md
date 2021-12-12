@@ -1,2 +1,1 @@
-Some information.
-Hello everyone!
+My test program for working with PostgreSQL Database
