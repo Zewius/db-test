@@ -9,8 +9,8 @@ public class JDBCPostgres {
     private Connection connection;
 
     public JDBCPostgres() {
-        DB_URL = ""; //URL Address;
-        USER = ""; //Username
+        DB_URL = "jdbc:postgresql://127.0.0.1:5432/postgres"; //URL Address;
+        USER = "postgres"; //Username
         PASS = ""; //Password
     }
 
@@ -53,6 +53,20 @@ public class JDBCPostgres {
                 BigDecimal salary = resultSet.getBigDecimal("SALARY");
                 Timestamp createdDate = resultSet.getTimestamp("CREATED_DATE");
                 System.out.println(id + ", " + name + ", " + salary + ", " + createdDate);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getDistinctName() {
+        String SQL_SELECT = "SELECT DISTINCT name FROM java_task.employee";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("NAME");
+                System.out.println(name);
             }
         } catch (Exception e) {
             e.printStackTrace();

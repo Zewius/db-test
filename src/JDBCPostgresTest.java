@@ -5,9 +5,10 @@ import java.sql.SQLException;
 
 public class JDBCPostgresTest {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         JDBCPostgres db = new JDBCPostgres();
         db.createConnection();
         db.getEmployeeList();
+        db.getDistinctName();
     }
 }
