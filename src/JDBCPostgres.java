@@ -9,9 +9,9 @@ public class JDBCPostgres {
     private Connection connection;
 
     public JDBCPostgres() {
-        DB_URL = "jdbc:postgresql://localhost:5432/postgres";
-        USER = "postgres";
-        PASS = "";
+        DB_URL = ""; //URL Address;
+        USER = ""; //Username
+        PASS = ""; //Password
     }
 
     public JDBCPostgres(String dbUrl, String user, String pass) {
